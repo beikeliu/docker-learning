@@ -46,3 +46,14 @@ docker container rm ${123456}
 # 清理所有终止状态下容器
 docker container prune
 ```
+
+## 制作镜像
+```sh
+# 新建Dockerfile文件
+mkdir mynginx && cd mynginx && touch Dockerfile
+# 脚本编写
+FROM nginx
+RUN echo '<h1>Hello, Docker!</h1>' > /usr/share/nginx/html/index.html
+# 镜像构建
+docker build -t nginx:v2 .
+```
