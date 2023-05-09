@@ -18,9 +18,9 @@
 ## 镜像命令
 ```sh
 # 获取
-docker pull ubuntu:18.04
+docker pull ${ubuntu:18.04}
 # 单次运行(运行后exit即销毁)
-docker run -it --rm ubuntu:18.04 bash
+docker run -it --rm ${ubuntu:18.04} bash
 # 列出
 docker image ls
 # 删除
@@ -47,13 +47,13 @@ docker container rm ${123456}
 docker container prune
 ```
 
-## 制作镜像
+## 制作镜像·示例
 ```sh
 # 新建Dockerfile文件
-mkdir mynginx && cd mynginx && touch Dockerfile
+mkdir mynginx && cd $mynginx && touch Dockerfile
 # 脚本编写
 FROM nginx
 RUN echo '<h1>Hello, Docker!</h1>' > /usr/share/nginx/html/index.html
-# 镜像构建
+# 镜像构建(注意最后的 . 代表从当前目录的dockerfile构建)
 docker build -t nginx:v2 .
 ```
