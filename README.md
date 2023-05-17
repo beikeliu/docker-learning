@@ -43,6 +43,8 @@ docker container ls
 docker container start ${123456}
 # 重启容器
 docker container restart ${123456}
+# 停止容器
+docker container stop ${123456}
 # 删除容器
 docker container rm ${123456}
 # 清理所有终止状态下容器
