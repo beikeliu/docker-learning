@@ -27,6 +27,8 @@ docker image ls
 docker image rm ${123456}
 # 清理虚悬镜像(因为某些更新问题导致丢失版本的临时镜像文件)
 docker image prune
+# 构建镜像
+docker build -t ${getting-started} .
 ```
 
 ## 容器命令
@@ -45,4 +47,13 @@ docker container restart ${123456}
 docker container rm ${123456}
 # 清理所有终止状态下容器
 docker container prune
+```
+## Dockerfile 示例
+```
+FROM node:18
+WORKDIR /app
+COPY . .
+RUN yarn install --production
+CMD ["node", "src/index.js"]
+EXPOSE 3000
 ```
