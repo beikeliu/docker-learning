@@ -49,6 +49,9 @@ docker container stop ${123456}
 docker container rm ${123456}
 # 清理所有终止状态下容器
 docker container prune
+# 查看端口映射
+➜  ~ docker port mysql
+3306/tcp -> 0.0.0.0:6666
 ```
 ## Dockerfile 示例
 ```
